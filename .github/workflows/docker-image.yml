@@ -17,10 +17,10 @@ jobs:
       with:
         submodules: recursive
     - name: Build the Docker image
-      run: docker build ./dockerfiles/openscad --tag openscad:$(date +%s)
+      run: docker build ./dockerfiles/openscad --tag openscad-renderer
 
     - name: Build thumbnails
-      run: docker run -u $UID:$GID --rm -v `pwd`:/data openscad bash render-all.sh
+      run: docker run -u $UID:$GID --rm -v `pwd`:/data openscad-renderer bash render-all.sh
 
     - name: Archive thumbnails
       uses: actions/upload-artifact@v2
