@@ -1,0 +1,33 @@
+[submodule "Jetpack-Extruder"]
+	path = Jetpack-Extruder
+	url = git@github.com:VoronDesign/Jetpack-Extruder
+[submodule "Mobius-Extruder"]
+	path = Mobius-Extruder
+	url = git@github.com:VoronDesign/Mobius-Extruder
+[submodule "Pocket-Watch"]
+	path = Pocket-Watch
+	url = git@github.com:VoronDesign/Pocket-Watch
+[submodule "Voron-0"]
+	path = Voron-0
+	url = git@github.com:VoronDesign/Voron-0
+[submodule "Voron-1"]
+	path = Voron-1
+	url = git@github.com:VoronDesign/Voron-1
+[submodule "Voron-2"]
+	path = Voron-2
+	url = git@github.com:VoronDesign/Voron-2
+[submodule "Voron-Afterburner"]
+	path = Voron-Afterburner
+	url = git@github.com:VoronDesign/Voron-Afterburner
+[submodule "Voron-Documentation"]
+	path = Voron-Documentation
+	url = git@github.com:VoronDesign/Voron-Documentation
+[submodule "Voron-Legacy"]
+	path = Voron-Legacy
+	url = git@github.com:VoronDesign/Voron-Legacy
+[submodule "Voron-Switchwire"]
+	path = Voron-Switchwire
+	url = git@github.com:VoronDesign/Voron-Switchwire
+[submodule "Voron-Trident"]
+	path = Voron-Trident
+	url = git@github.com:VoronDesign/Voron-Trident
