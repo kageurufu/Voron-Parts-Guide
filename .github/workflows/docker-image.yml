@@ -16,6 +16,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         submodules: recursive
+        
     - name: Build the Docker image
       run: docker build ./dockerfiles/openscad --tag openscad-renderer
 
@@ -26,4 +27,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with: 
         name: thumbnails
-        path: images
+        path: Voron-Documentation/parts/images/
