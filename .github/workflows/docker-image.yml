@@ -1,0 +1,29 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+    - name: Build the Docker image
+      run: docker build ./dockerfiles/openscad --tag openscad:$(date +%s)
+
+    - name: Build thumbnails
+      run: docker run -u $UID:$GID --rm -v `pwd`:/data openscad bash render-all.sh
+
+    - name: Archive thumbnails
+      uses: actions/upload-artifact@v2
+      with: 
+        name: thumbnails
+        path: images
