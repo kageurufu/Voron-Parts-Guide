@@ -6,21 +6,20 @@
 
 set -euo pipefail
 
-cat <<EOF >__render.scad
-color(render_color) rotate([0, 0, 0]) import(model);
-EOF
+render-stl() {
+  STL="$1"
 
-find . -iname '*.stl' | while read STL; do
   if [[ "$STL" == *"[a]"* ]]; then
-    COLOR="DimGrey" # Accent in Grey
+    MATERIAL="540809 cc1417 a64b4b" # Voron Red
   else
-    COLOR="Red" # Voron Red
+    MATERIAL="262626 41434a 232a33" # Dim Grey ish
   fi
  
   echo "--> Rendering $STL"
   mkdir -p "images/$(dirname "$STL")"
   
-  openscad --quiet -o "images/${STL%.*}.png" --colorscheme=VORON-dark __render.scad -D "render_color=\"$COLOR\"" -D "model=\"$STL\""
-done
+  stl-thumb --material $MATERIAL "$STL" "images/${STL%.*}.png"
+}
+export -f render-stl
 
-rm __render.scad
+parallel render-stl ::: "$(find . -iname '*.stl')"
