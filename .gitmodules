@@ -31,3 +31,6 @@
 [submodule "Voron-Trident"]
 	path = Voron-Trident
 	url = git@github.com:VoronDesign/Voron-Trident
+[submodule "Voron-StealthBurner"]
+	path = Voron-StealthBurner
+	url = git@github.com:VoronDesign/Voron-Afterburner
